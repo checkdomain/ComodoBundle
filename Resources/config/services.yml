@@ -1,0 +1,12 @@
+services:
+    checkdomain.comodo.account:
+      class:  Checkdomain\Comodo\Model\Account
+      arguments: ['%checkdomain.comodo.account.user%', '%checkdomain.comodo.account.password%']
+
+    checkdomain.comodo.communication_adapter:
+      class: Checkdomain\Comodo\CommunicationAdapter
+      arguments: [@checkdomain.comodo.account]
+
+    checkdomain.comodo.util:
+        class: Checkdomain\Comodo\Util
+        arguments: [@checkdomain.comodo.communication_adapter]

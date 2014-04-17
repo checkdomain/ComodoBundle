@@ -1,0 +1,22 @@
+{
+    "name":         "checkdomain/comodo-bundle",
+    "description":  "Checkdomain/ComodoBundle a service to the comodo util class, to communicate with the comodo SSL Api",
+    "keywords":     ["comodo", "symfony", "bundle"],
+    "type":         "library",
+    "license":      "MIT",
+    "authors": [
+        {
+            "name":     "Tobias Nitsche",
+            "email":    "t.nitsche@checkdomain.de",
+            "homepage": "http://checkdomain.de"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "checkdomain/comodo": "dev-master"
+    },
+    "autoload": {
+        "psr-0": { "Checkdomain\\ComodoBundle": "" }
+    },
+    "target-dir": "Checkdomain/ComodoBundle"
+}
