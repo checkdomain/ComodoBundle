@@ -17,12 +17,15 @@ class Configuration implements ConfigurationInterface
     {
         $treeBuilder = new TreeBuilder();
 
-        $rootNode = $treeBuilder->root('checkdomain.comodo.account');
+        $rootNode = $treeBuilder->root('checkdomain_comodo');
 
         $rootNode->children()
-            ->scalarNode('username')->isRequired()->cannotBeEmpty()->end()
-            ->scalarNode('password')->isRequired()->cannotBeEmpty()->end()
-            ->end();
+                 ->arrayNode('account')
+                     ->children()
+                     ->scalarNode('user')->isRequired()->cannotBeEmpty()->end()
+                     ->scalarNode('password')->isRequired()->cannotBeEmpty()->end()
+                     ->end()
+                 ->end();
 
         return $treeBuilder;
     }

@@ -20,8 +20,11 @@ class CheckdomainComodoExtension extends Extension
      */
     public function load(array $configs, ContainerBuilder $container)
     {
-        // $configuration = new Configuration();
-        // $config = $this->processConfiguration($configuration, $configs);
+        $configuration = new Configuration();
+        $config = $this->processConfiguration($configuration, $configs);
+
+        $container->setParameter("checkdomain_comodo.account.user", $config['account']['user']);
+        $container->setParameter("checkdomain_comodo.account.password", $config['account']['password']);
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('services.yml');
