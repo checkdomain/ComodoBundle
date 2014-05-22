@@ -25,6 +25,17 @@ class Configuration implements ConfigurationInterface
                      ->scalarNode('user')->isRequired()->cannotBeEmpty()->end()
                      ->scalarNode('password')->isRequired()->cannotBeEmpty()->end()
                      ->end()
+                 ->end()
+                 ->arrayNode('imap')
+                    ->children()
+                    ->arrayNode('access')
+                        ->children()
+                        ->scalarNode('host')->end()
+                        ->scalarNode('ssl')->end()
+                        ->scalarNode('user')->end()
+                        ->scalarNode('password')->end()
+                        ->end()
+                    ->end()
                  ->end();
 
         return $treeBuilder;
