@@ -14,7 +14,6 @@ use Braincrafted\Bundle\BootstrapBundle\DependencyInjection\AsseticConfiguration
  */
 class CheckdomainComodoExtension extends Extension
 {
-
     /**
      * {@inheritDoc}
      */
@@ -25,11 +24,9 @@ class CheckdomainComodoExtension extends Extension
 
         $container->setParameter("checkdomain_comodo.account.user", $config['account']['user']);
         $container->setParameter("checkdomain_comodo.account.password", $config['account']['password']);
-
         $container->setParameter("checkdomain_comodo.imap.access", $config['imap']['access']);
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('services.yml');
     }
-
 }

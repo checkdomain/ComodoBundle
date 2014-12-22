@@ -1,19 +1,26 @@
+parameters:
+  checkdomain.comodo.imap.class: Checkdomain\Comodo\ImapWithSearch
+  checkdomain.comodo.imap_helper.class: Checkdomain\Comodo\ImapHelper
+  checkdomain.comodo.account.class: Checkdomain\Comodo\Model\Account
+  checkdomain.comodo.communication_adapter.class: Checkdomain\Comodo\CommunicationAdapter
+  checkdomain.comodo.util.class: Checkdomain\Comodo\Util
+
 services:
     checkdomain.comodo.imap:
-      class:  Checkdomain\Comodo\ImapWithSearch
+      class:  %checkdomain.comodo.imap.class%
       arguments: ['%checkdomain_comodo.imap.access%']
 
     checkdomain.comodo.imap_helper:
-      class:  Checkdomain\Comodo\ImapHelper
+      class:  %checkdomain.comodo.imap_helper.class%
 
     checkdomain.comodo.account:
-      class:  Checkdomain\Comodo\Model\Account
+      class:  %checkdomain.comodo.account.class%
       arguments: ['%checkdomain_comodo.account.user%', '%checkdomain_comodo.account.password%']
 
     checkdomain.comodo.communication_adapter:
-      class: Checkdomain\Comodo\CommunicationAdapter
+      class: %checkdomain.comodo.communication_adapter.class%
       arguments: [@checkdomain.comodo.account]
 
     checkdomain.comodo.util:
-        class: Checkdomain\Comodo\Util
+        class: %checkdomain.comodo.util.class%
         arguments: [@checkdomain.comodo.communication_adapter, @checkdomain.comodo.imap, @checkdomain.comodo.imap_helper]
