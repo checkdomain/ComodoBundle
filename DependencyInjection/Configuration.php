@@ -21,9 +21,10 @@ class Configuration implements ConfigurationInterface
 
         $rootNode->children()
                  ->arrayNode('account')
+                     ->canBeUnset()
                      ->children()
-                     ->scalarNode('user')->isRequired()->cannotBeEmpty()->end()
-                     ->scalarNode('password')->isRequired()->cannotBeEmpty()->end()
+                     ->scalarNode('user')->defaultNull()->end()
+                     ->scalarNode('password')->defaultNull()->end()
                      ->end()
                  ->end()
                  ->arrayNode('imap')
