@@ -21,7 +21,7 @@ class Configuration implements ConfigurationInterface
 
         $rootNode->children()
                  ->arrayNode('account')
-                     ->canBeUnset()
+                     ->addDefaultsIfNotSet()
                      ->children()
                      ->scalarNode('user')->defaultNull()->end()
                      ->scalarNode('password')->defaultNull()->end()
