@@ -9,6 +9,7 @@ services:
     checkdomain.comodo.imap:
       class:  %checkdomain.comodo.imap.class%
       arguments: ['%checkdomain_comodo.imap.access%']
+      lazy: true
 
     checkdomain.comodo.imap_helper:
       class:  %checkdomain.comodo.imap_helper.class%
