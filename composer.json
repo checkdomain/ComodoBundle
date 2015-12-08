@@ -13,9 +13,7 @@
     ],
     "require": {
         "php": ">=5.3.3",
-        "checkdomain/comodo": "dev-master",
-        "ocramius/proxy-manager": "~1.0"
-
+        "checkdomain/comodo": "dev-master"
     },
     "autoload": {
         "psr-0": { "Checkdomain\\ComodoBundle": "" }
