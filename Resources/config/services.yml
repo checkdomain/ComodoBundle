@@ -1,5 +1,5 @@
 parameters:
-  checkdomain.comodo.imap.class: Checkdomain\Comodo\ImapWithSearch
+  checkdomain.comodo.imap.class: Checkdomain\Comodo\ImapAdapter
   checkdomain.comodo.imap_helper.class: Checkdomain\Comodo\ImapHelper
   checkdomain.comodo.account.class: Checkdomain\Comodo\Model\Account
   checkdomain.comodo.communication_adapter.class: Checkdomain\Comodo\CommunicationAdapter
