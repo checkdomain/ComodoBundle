@@ -7,8 +7,6 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
-use Braincrafted\Bundle\BootstrapBundle\DependencyInjection\AsseticConfiguration;
-
 /**
  * Class CheckdomainComodoExtension
  */
@@ -26,7 +24,7 @@ class CheckdomainComodoExtension extends Extension
         $container->setParameter("checkdomain_comodo.account.password", $config['account']['password']);
         $container->setParameter("checkdomain_comodo.imap.access", $config['imap']['access']);
 
-        $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
+        $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
     }
 }
