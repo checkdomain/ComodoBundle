@@ -13,7 +13,7 @@
     ],
     "require": {
         "php": ">=5.3.3",
-        "checkdomain/comodo": "dev-master"
+        "checkdomain/comodo": "~1.1"
     },
     "autoload": {
         "psr-0": { "Checkdomain\\ComodoBundle": "" }
