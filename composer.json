@@ -16,7 +16,6 @@
         "checkdomain/comodo": "~1.1"
     },
     "autoload": {
-        "psr-0": { "Checkdomain\\ComodoBundle": "" }
-    },
-    "target-dir": "Checkdomain/ComodoBundle"
+        "psr-4": { "Checkdomain\\ComodoBundle": "" }
+    }
 }
