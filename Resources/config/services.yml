@@ -7,21 +7,21 @@ parameters:
 
 services:
     checkdomain.comodo.imap:
-      class:  %checkdomain.comodo.imap.class%
+      class:  '%checkdomain.comodo.imap.class%'
       arguments: ['%checkdomain_comodo.imap.access%']
       lazy: true
 
     checkdomain.comodo.imap_helper:
-      class:  %checkdomain.comodo.imap_helper.class%
+      class:  '%checkdomain.comodo.imap_helper.class%'
 
     checkdomain.comodo.account:
-      class:  %checkdomain.comodo.account.class%
+      class:  '%checkdomain.comodo.account.class%'
       arguments: ['%checkdomain_comodo.account.user%', '%checkdomain_comodo.account.password%']
 
     checkdomain.comodo.communication_adapter:
-      class: %checkdomain.comodo.communication_adapter.class%
-      arguments: [@checkdomain.comodo.account]
+      class: '%checkdomain.comodo.communication_adapter.class%'
+      arguments: ['@checkdomain.comodo.account']
 
     checkdomain.comodo.util:
-        class: %checkdomain.comodo.util.class%
-        arguments: [@checkdomain.comodo.communication_adapter, @checkdomain.comodo.imap, @checkdomain.comodo.imap_helper]
+        class: '%checkdomain.comodo.util.class%'
+        arguments: ['@checkdomain.comodo.communication_adapter', '@checkdomain.comodo.imap', '@checkdomain.comodo.imap_helper']
